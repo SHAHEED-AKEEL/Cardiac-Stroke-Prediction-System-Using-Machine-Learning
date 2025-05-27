@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+
+        
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+}
+
+#header.header-scrolled, #header.header-inner-pages {
+  background: rgba(40, 58, 90, 0.9);
+}
+
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#header .logo a {
+  color: #fff;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+/*--------------------------------------------------------------
+#  End Header
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #030303;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover, .navbar .active, .navbar li:hover > a {
+  color: #47b2e4;
+}
+
+.navbar .getstarted {
+  padding: 8px 20px;
+  margin-left: 30px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  border: 2px solid #47b2e4;
+  font-weight: 600;
+}
+
+.navbar .getstarted:hover {
+  color: #fff;
+  background: #31a9e1;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 500;
+  color: #0c3c53;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+  color: #47b2e4;
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(40, 58, 90, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #37517e;
+}
+
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: #47b2e4;
+}
+
+.navbar-mobile .getstarted {
+  margin: 15px;
+  color: #37517e;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+  color: #47b2e4;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# End Navigation Menu
+--------------------------------------------------------------*/
+h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    color: rgba(18, 1, 110, 0.712);
+    font-size: 45px;
+    text-shadow: 2px 4px lightblue;
+    
+}
+
+
+/*p,p,p,p{
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+
+}*/
+/*
+body{
+    background-image: url(../static/img/heart3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    backface-visibility: 50%;
+    background-color: rgba(248, 248, 248, 0.5);
+}
+.container img {
+  flex: 0 0 auto; /* Prevent image from expanding horizontally 
+  margin-left: 40%; /* Add margin for spacing (adjust as needed) 
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+}
+.container > p{
+    flex: 1;
+    margin-left: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: large;
+    font-style: oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}*/
+body{
+    background-color: cornsilk;
+}
+.container{
+    display:flex;
+    align-items:flex-start;
+}
+.image{
+    flex: 0 0 auto;
+    width: 500px;
+    height: 500px;
+    margin-right: 20px;
+
+}
+
+.text{
+    flex: 1;
+    text-align:center ;
+    font-size: large;
+    font-style: oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+    </style>
+</head>
+<body>
+
+      <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="/about">About</a></li>
+          </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  
+
+    <h1>About Us</h1><br>
+    
+    <div class="container">
+        <img src="../static/img/heart4.jpg" class="image">
+        <div class="text">
+<br>
+
+
+
+        <p>
+            Cardiovascular diseases, encompassing conditions such as coronary heart disease, stroke, peripheral arterial disease, and aortic disease, stand as a significant global health challenge, accounting for a substantial portion of morbidity and mortality. Early and accurate diagnosis of these diseases is pivotal in facilitating timely medical intervention and improving patient outcomes. In this context, the integration of deep learning and image processing techniques has emerged as a promising for non-invasive and efficient disease detection from electrocardiogram (ECG) images. <br><br>
+            In the diagnosing these cardiovascular diseases often involved invasive procedures, such as angiography or surgical interventions.  The Inception v3 deep learning algorithm, which is renowned for its accuracy and efficiency in image classification tasks. <br><br>
+            The power of deep learning and image processing, we aim to enhance the precision and speed of cardiovascular disease diagnosis while minimizing the need for invasive procedures. This research endeavors to contribute to the growing body of knowledge aimed at improving the early diagnosis of these life-threatening conditions, ultimately enhancing patient care, reducing healthcare costs, and increasing the overall well-being of individuals affected by cardiovascular diseases. <br><br>
+        </p>
+        </div>
+<!-- 
+    <p>&emsp;&emsp;Cardiovascular diseases, encompassing conditions such as coronary heart disease, stroke, peripheral arterial disease, and aortic disease, stand as a significant global health challenge, accounting for a substantial portion of morbidity and mortality. Early and accurate diagnosis of these diseases is pivotal in facilitating timely medical intervention and improving patient outcomes. In this context, the integration of deep learning and image processing techniques has emerged as a promising for non-invasive and efficient disease detection from electrocardiogram (ECG) images.</p>
+    <p>&emsp;&emsp;In the diagnosing these cardiovascular diseases often involved invasive procedures, such as angiography or surgical interventions. However, advancements in medical imaging and machine learning have paved the way for non-invasive techniques. ECG, a widely used diagnostic tool, records the electrical activity of the heart and has become an invaluable resource for cardiovascular disease diagnosis. This research focuses on the development of an innovative approach that leverages both image processing and deep learning to detect and classify these four major cardiovascular diseases from ECG images. The Inception v3 deep learning algorithm, which is renowned for its accuracy and efficiency in image classification tasks. </p>
+    <p>&emsp;&emsp;The power of deep learning and image processing, we aim to enhance the precision and speed of cardiovascular disease diagnosis while minimizing the need for invasive procedures. The integration of image processing and deep learning in cardiovascular disease detection represents a significant stride in the pursuit of more accessible and effective healthcare solutions. This research endeavors to contribute to the growing body of knowledge aimed at improving the early diagnosis of these life-threatening conditions, ultimately enhancing patient care, reducing healthcare costs, and increasing the overall well-being of individuals affected by cardiovascular diseases.</p>
+-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+	<style>body {
+		font-family: Arial, sans-serif;
+		background-color: #f4f4f4;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.container {
+		max-width: 800px;
+		margin: 50px auto;
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	
+	h1, h2 {
+		text-align: center;
+		color: #333;
+	}
+	
+	h1 {
+		margin-bottom: 20px;
+	}
+	
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+	
+	/* Optional: Add custom styles for buttons, form elements, etc. */
+	</style>
+</head>
+<body>
+    <h1>{{ result }}</h1>
+    <h2>{{ positive }}%</h2>
+    <h2>{{ res2 }}</h2>
+    <img src="{{ plot_image }}" alt="Input Details">
+</body>
+</html>

@@ -1,0 +1,160 @@
+<html>
+	<head>
+	<style>
+
+
+	.container:hover
+	{
+		background-color:rgb(210, 211, 211);
+	}
+	input[type="number"]:hover ,.form-control:hover,  select :hover
+	{
+		color: rgb(29, 25, 25);
+		font-weight: bold;
+	}
+
+	</style>
+
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>Heart Disease Test</title>
+	</head>
+	<body style="background-color: rgb(119, 119, 119,0.5);">
+	<!-- Java Script -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark " style="background-color: #37517e;">
+			<span class="navbar-brand mb-0 h1"><a style="margin:auto 670px;font-weight: bold;">HEART CARE </a></span>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predictrf')}}" method ="POST" >
+				<fieldset>
+				<legend>DEEP LEARNING Classifier</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="age">Age</label>
+							<input type="number" class="form-control" id="age" name="age" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="sex">Sex</label>
+							<select class="form-control" id="sex"  name="sex" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Male</option>
+							  <option value = "1">Female</option>
+							</select>
+					   </div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+                              <label for="cp">Smoke</label>
+							<select class="form-control" id="cp"  name="cp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">0</option>
+							  <option value = "1">1</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="trestbps">Weight</label>
+							<input type="number" class="form-control" id="trestbps" name="trestbps"  required>
+						  </div>
+						  <div class="col-sm">
+                              <label for="cp">Active</label>
+							<select class="form-control" id="chol"  name="chol" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">0</option>
+							  <option value = "1">1</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="cp">IHD</label>
+							<select class="form-control" id="fbs"  name="fbs" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">0</option>
+							  <option value = "1">1</option>
+							</select>
+						</div>
+					  </div>
+
+					  <br>
+					  <div class="form-group row">
+							<div class="col-sm">
+								<label for="restecg">HR </label>
+                                <input type="number" class="form-control" id="restecg" name="restecg"  required>
+
+							  </div>
+							  <div class="col-sm">
+								<label for="thalach">bpsys</label>
+								<input type="number" class="form-control" id="thalach" name="thalach" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="exang">bpdias</label>
+								<input type="number" step="any" class="form-control" id="exang" name="exang" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="exang">htn </label>
+								<select class="form-control" id="oldpeak" name="oldpeak" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "0">No</option>
+								  <option value = "1">Yes</option>
+								</select>
+							  </div>
+						  </div>
+						  <br>
+						  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="slope">ivsd</label>
+							<select class="form-control" id="slope" name="slope" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">0</option>
+							  <option value = "1">1</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="ca">ecgpatt</label>
+							<select class="form-control" id="ca" name = "ca" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">0</option>
+							  <option value = "1">1</option>
+							  <option value = "2">2</option>
+							  <option value = "3">3</option>
+							  <option value = "3">4</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="thal">qwave</label>
+							<select class="form-control" id="thal" name = "thal" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "3">0</option>
+							  <option value = "6">1</option>
+							</select>
+						  </div>
+					  </div>
+					  <br>
+					  <div class="form-group">
+						<input style="margin: auto ; width:1070px; height: 50px;" class="btn btn-primary" type="submit" value="Result">
+					  </div>
+
+					  <!--Prediction Result-->
+					  <div id ="result">
+						<strong style="color:red">{{result}}{{positive}}<br>{{res2}}</strong>
+				 </div>
+				     </div>
+			 </fieldset>
+			</form>
+
+		</div>
+
+	</body>
+</html>
+
